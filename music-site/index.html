@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내가 좋아하는 앨범 컬렉션</title>
+<meta name="title" content="내가 좋아하는 앨범 컬렉션">
+<meta name="description" content="내가 좋아하는 앨범 소개 사이트. 비프리, 염따, 실리카겔, 씨잼, 뉴진스 등 좋아하는 앨범을 모아놓은 페이지입니다.">
+<meta name="keywords" content="음악, 앨범, 비프리, 염따, 실리카겔, 씨잼, 뉴진스, Spotify">
+<meta name="robots" content="index, follow">
+<style>
+body { margin:0; font-family:'Segoe UI',sans-serif; background:linear-gradient(135deg,#0f0f0f,#1c1c1c); color:white; }
+.navbar { display:flex; align-items:center; padding:10px 20px; background:rgba(0,0,0,0.6);}
+.navbar .logo { width:40px; height:40px; margin-right:15px; border-radius:8px; }
+h1 { text-align:center; margin:30px 0; font-size:1.8rem; }
+.container { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; padding:15px;}
+.album { background:#1a1a1a; padding:15px; border-radius:15px; transition:0.3s; cursor:pointer;}
+.album:hover { transform: translateY(-5px) scale(1.02); }
+.album img { width:100%; border-radius:10px;}
+.album h3 { margin:10px 0 5px; font-size:1rem; line-height:1.3;}
+.album p { color:#aaa; font-size:0.85rem;}
+@media (max-width:480px) { h1 { font-size:1.4rem; margin:20px 0;} .album h3 { font-size:0.95rem;} .album p { font-size:0.75rem;} .navbar .logo { width:30px;height:30px; margin-right:10px; } }
+</style>
+</head>
+<body>
+<div class="navbar">
+  <img src="logo.png" alt="Logo" class="logo">
+  <div>🎧 Album Site</div>
+</div>
+<h1>💿 내가 좋아하는 앨범</h1>
+<div class="container">
+  <div class="album" onclick="goDetail('odyssey')">
+    <img src="odyssey.jpg" alt="Odyssey">
+    <h3>Free Hukky Shibaseki & the God Sun Symphony Group : Odyssey.1</h3>
+    <p>비프리, 허키 시바세키</p>
+  </div>
+
+  <div class="album" onclick="goDetail('yumdda')">
+    <img src="yumdda.jpg" alt="Yumdda">
+    <h3>살아숨셔 4</h3>
+    <p>염따</p>
+  </div>
+
+  <div class="album" onclick="goDetail('silicagel')">
+    <img src="silicagel.jpg" alt="Silicagel">
+    <h3>POWER ANDRE 99</h3>
+    <p>실리카겔</p>
+  </div>
+
+  <div class="album" onclick="goDetail('cejam')">
+    <img src="cejam.jpg" alt="킁">
+    <h3>킁</h3>
+    <p>씨잼</p>
+  </div>
+
+  <div class="album" onclick="goDetail('newjeans')">
+    <img src="newjeans.jpg" alt="Get Up">
+    <h3>Get Up</h3>
+    <p>뉴진스</p>
+  </div>
+</div>
+
+<script>
+function goDetail(album){ location.href="detail.html?album="+album; }
+</script>
+</body>
+</html>

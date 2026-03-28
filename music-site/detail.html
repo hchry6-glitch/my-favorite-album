@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>앨범 상세 페이지</title>
+<meta name="description" content="앨범 상세 페이지. Spotify 재생 포함">
+<meta name="robots" content="index, follow">
+<style>
+body { margin:0; font-family:'Segoe UI',sans-serif; background:#111; color:white; text-align:center; padding:15px;}
+.wrapper { max-width:500px; margin:0 auto; }
+img { width:100%; max-width:350px; border-radius:15px;}
+p { margin-top:15px; color:#ccc; font-size:0.9rem;}
+iframe { margin-top:20px; width:100%; max-width:350px; border-radius:12px; }
+button { margin-top:20px; padding:10px 16px; background:#1db954; border:none; border-radius:10px; color:white; cursor:pointer; font-size:0.9rem;}
+button:hover { background:#1ed760;}
+@media (max-width:480px) { h1 { font-size:1.3rem;} p { font-size:0.8rem;} button { font-size:0.8rem; padding:8px 12px;} }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <h1 id="title"></h1>
+  <img id="cover" alt="앨범 커버">
+  <p id="desc"></p>
+  <iframe id="player" height="152" allow="encrypted-media" allowtransparency="true" frameborder="0"></iframe>
+  <br>
+  <button onclick="goBack()">← 뒤로가기</button>
+</div>
+<script>
+const data={
+  odyssey:{title:"Free Hukky Shibaseki & the God Sun Symphony Group : Odyssey.1", img:"odyssey.jpg", desc:'"이 세상 모든 약자들을 위해 바칩니다." 비프리와 허키 시바세키의 첫 합작 음반.', embed:"https://open.spotify.com/embed/album/2oA8sukittptlD7NRqIaop"},
+  yumdda:{title:"살아숨셔 4", img:"yumdda.jpg", desc:'"오랜만~" 염따의 정규 5집.', embed:"https://open.spotify.com/embed/album/4mH2hi1Tjysb8bTCJpYYCU"},
+  silicagel:{title:"POWER ANDRE 99", img:"silicagel.jpg", desc:'"세상엔 아름답지 않은 사건들만 알려지고 있다고" 실리카겔의 정규 2집.'
+, embed:"https://open.spotify.com/embed/album/49CqNP5omI7QbOe8TPAR0y"},
+  cejam:{title:"킁", img:"cejam.jpg", desc:'"오랜만입니다. 당분간 자주 찾아뵙겠습니다" 씨잼의 EP 1집', embed:"https://open.spotify.com/embed/album/27DBdAQYbalG0di7blGfDc?si=mEabOpbMTqaquGR7BN8V9Q"},
+  newjeans:{title:"Get Up", img:"newjeans.jpg", desc:'"뉴진스(NewJeans)는 매일 찾게 되고 언제 입어도 질리지 않는 진(Jean)처럼 시대의 아이콘"             NewJeans의 두 번째 EP.', embed:"https://open.spotify.com/embed/album/4N1fROq2oeyLGAlQ1C1j18?si=tAPiyK2iSXWgJjILjm_2EQ"}
+};
+const params=new URLSearchParams(location.search);
+const album=params.get("album");
+const d=data[album];
+document.getElementById("title").innerText=d.title;
+document.getElementById("cover").src=d.img;
+document.getElementById("desc").innerText=d.desc;
+document.getElementById("player").src=d.embed;
+function goBack(){ history.back(); }
+</script>
+</body>
+</html>
